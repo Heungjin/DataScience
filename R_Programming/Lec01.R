@@ -1,5 +1,4 @@
-
-summary(iris)
+# lecture 1. 
 
 x=table(iris$Species) 
 
