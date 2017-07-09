@@ -1,4 +1,6 @@
-# Lecture 01
+### Lecture 01
+
+### 기초적인 문법
 
 x = table(iris$Species) 
 
@@ -32,20 +34,28 @@ median(x1)
 # median(x1) = ((n/2) + ((n/2)+1))/2 
 
 sample(1:45, 6, replace = F) #로또 : 45개의 숫자중 6개 추출, 
-                             #replace는 복원 비복원. 비복원으로 하면 다음 값에 영향
+                             #replace는 복원/비복원. 비복원으로 하면 다음 값에 영향
 
-ind = sample(1:nrow(iris), 150, replace = F)
+ind = sample(1:nrow(iris), 150, replace = F) # 1부터 nrow(iris) -- (iris 끝행의 수 150개)까지의 샘플 150개 추출 
+                                             # 따라서 1부터 150개로 이루어진 iris의 순서를
+                                             # Random하게 뒤섞는 것
 A1 = iris[ind, ] 
 View(iris)
 View(A1)
 
-# nrow(iris) -- iris의 끝행의 수.
+
 ind1 = sample(1:nrow(iris), nrow(iris)*0.7, replace = F)
 
 train = iris[ind1,]
 test=iris[-ind1,]
 View(train)
 View(test)
+
+
+
+
+
+### 데이터의 시각화 기법
 
 summary(iris) # 1st qu. 상위 25%값, #3rd qu. 상위 75%값
 
@@ -125,6 +135,9 @@ list2[[1]][[2]] # 첫번째 리스트 안에있는 두번째 리스트의 값 �
 # 첫번째 결과의 2번째를 출력
 ################################################################################
 
+
+### 네이버의 빅데이터-wiki를 받아서 big.txt파일로 저장 ==> 많이 나온 순서대로 시각화하기 
+
 txt = readLines('big.txt', encoding = 'UTF-8') # txt변수에 test.txt 내용 저장
 # txt안의 enter단위로 줄 인식. 마지막 줄에 꼭 enter넣기
 
@@ -156,7 +169,9 @@ library(wordcloud)
 
 wordcloud(names(txt_t), txt_t)
 
-useSejongDic() # 세종사전 단어 등록
+useSejongDic() # 세종사전 단어 등록(어떠한 것이 단어인지 인식하기 위해)
+
+## 데이터 핸들링. ==> 단어를 다듬어야 하거나 무의미한 글자 제거 작업
 
 txt1 = gsub("데이터","빅데이터",txt0) # 찾아 바꾸기. gsup([바꾸기전],[바꾼후],[텍스트위치])
 txt1 = gsub('[A-z]','',txt1) # ([]안에 있는 모든 것을 찾아달라, ''는 데이터 삭제)
@@ -168,8 +183,8 @@ txt1 = gsub("  "," ",txt1)
 # 정규표현식에서 대괄호는 무조건 becasue 패턴이기 때문에.
 # 정규표현식으로 패턴을 만들 수 있다. (regular expression)
 
-# Character Classes
-# Pattern	Meaning
+# *참고*
+# Character Classes Pattern	Meaning
 # [[:alpha:]]	Match a letter character: [A-Za-z]
 # [[:digit:]]	Match a digit character: [0-9]
 # [[:xdigit:]]	Match a hexadecimal digit character: [0-9A-Fa-f]
