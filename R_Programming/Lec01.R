@@ -1,6 +1,6 @@
-# lecture 1. 
+# Lecture 01
 
-x=table(iris$Species) 
+x = table(iris$Species) 
 
 x1<-1 # x1에 1을 대입
 
@@ -14,14 +14,14 @@ x3 = 1:10 # x3에 1부터 10까지의 합 대입
 
 x4[2]
 
-
 matrix(1:15, nrow=3)  # Matrix는 행렬을 생성하는 것이다.
 x5=matrix(1:15, ncol=3, byrow=T)
 x5
 x5[2,3]
 x5[c(2,4),3]
-x5[-c(2,4),3]
-str(iris)
+x5[-c(2,4),3] # -c(2,4)의 경우 c(2,4)의 행을 제외한 나머지 행 출력
+
+str(iris) # str ==> structure
 
 x1 = c(1,2,3,4,5,6,7,1000) # 1000은 이상치 이상치를 제거 해야함
 sum(x1)/length(x1)
@@ -150,7 +150,7 @@ str(txt_n)
 txt_t = table(unlist(txt_n))
 
 #install.packages('wordcloud')
-# 워드 클라우드 설치 (시각화)
+# 워드 클라우드 설치 (데이터를 시각화 패키지)
 
 library(wordcloud)
 
@@ -159,10 +159,10 @@ wordcloud(names(txt_t), txt_t)
 useSejongDic() # 세종사전 단어 등록
 
 txt1 = gsub("데이터","빅데이터",txt0) # 찾아 바꾸기. gsup([바꾸기전],[바꾼후],[텍스트위치])
-txt1 = gsub('[A-z]','',txt1) # []안에 있는 모든 것을 찾아달라, ''는 데이터 삭제
+txt1 = gsub('[A-z]','',txt1) # ([]안에 있는 모든 것을 찾아달라, ''는 데이터 삭제)
 
-txt1 = gsub("[[:digit:]]","",txt1) 
-txt1 = gsub("[[:punct:]]","",txt1)
+txt1 = gsub("[[:digit:]]","",txt1) # delete digit character
+txt1 = gsub("[[:punct:]]","",txt1) # delete punctuation character
 txt1 = gsub("  "," ",txt1)
 
 # 정규표현식에서 대괄호는 무조건 becasue 패턴이기 때문에.
