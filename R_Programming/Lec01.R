@@ -182,28 +182,3 @@ txt1 = gsub("  "," ",txt1)
 # [[:graph:]]	Match Graphical character: [\x21-\x7E]
 # [[:print:]]	Match Printable character (graphical characters and spaces)
 # [[:cntrl:]]	Match control character
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
