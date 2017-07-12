@@ -172,7 +172,7 @@ teen_clusters$centers # 결과를 보면 어떤 집단이 어떠한 특징을 �
 
 
 
-### k-means가 아닌 다른 클러스트링 기법을 이용한 농산물 데이터분석
+### k-means가 아닌 다른 클러스트링 기법을 이용한 농산물 데이터분석 (Hierarchical Clustering)
 
 library3 <- c("plyr", "TSclust", "zoo", "ggplot2" ) 
 unlist(lapply(library3, require, character.only = TRUE ))
